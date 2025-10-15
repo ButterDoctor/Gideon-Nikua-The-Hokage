@@ -1,0 +1,49 @@
+h1 {color: darkviolet;}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/*margin-bottom: 30px; deleted in Learning Activity 3.1, #1*/
+
+.logo {
+    padding: 5px 50px;
+    width: 200px;
+}
+
+nav {
+    color: white;
+    float: right;
+    padding: 40px 50px 0px 0px;
+}
+
+/*Added in Section 3.2*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*Added in Section 3.2*/
+nav li {
+    display: inline-block
+}
+/*Added in Section 3.2*/
+nav li a {
+    color: rgb(149, 11, 11);
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.noto-sans-old-persian-regular {
+    font-family: "Noto Sans Old Persian", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .logo {
+    position: relative;  /* Move relative to original position */
+    left: -50px;          /* Moves right */
+    top: 10px;           /* Moves down */
+  }
+  
