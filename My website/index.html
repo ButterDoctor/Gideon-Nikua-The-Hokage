@@ -11,13 +11,13 @@
     .sub-header1 {
       position: relative;
       left: -255px;
-      top: 635px;
+      top: 670px;
     }
 
     .sub-header2 {
       position: relative;
       left: 500px;
-      top: 580px;
+      top: 610px;
     }
   </style>
       <meta charset="utf-8">
@@ -35,6 +35,11 @@
         <a href="index.html"><img class="logo" src="images/banana.png" alt="Logo" style="width: 2000px;" height="700"/></a>
         <nav>
             <ul> <!--<ul> and <li> tags adding during sections 3.1-->
+              <li class="toggle">
+                <div class="bar1"></div> 
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                </li>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="foodtips.html">Food Tips</a></li>
                 <li><a href="activities.html">Activities</a></li>
@@ -43,12 +48,17 @@
         </nav>
     </header> 
     <section id="intro"> <!--added in Section 3.1-->
-      <div class="intro-block"> <!--added in Section 3.1-->
-        <img src="images/chopped.png.jpg" width="500" height="400" style="position: absolute; top: 950px; left: 200px;">
-        <h2 class="sub-header1">ME BEFORE USING THESE TIPS AND TRICKS</h2>
-        <img src="images/images.jpg" width="500" height="400" style="position: absolute; top: 950px; left: 1200px;">
-        <h2 class="sub-header2">ME AFTER USING THESE TIPS AND TRICKS</h2>
-      
+      <div class="before-after">
+  <div>
+    <img src="images/chopped.png.jpg" alt="">
+    <h2>ME BEFORE USING THESE TIPS AND TRICKS</h2>
+  </div>
+  <div>
+    <img src="images/images.jpg" alt="">
+    <h2>ME AFTER USING THESE TIPS AND TRICKS</h2>
+  </div>
+</div>
+
         
           <h1 class="main-header">HELLO YOUNG BOY OR GIRL</h1>
           <p class="noto-sans-old-persian-regular">This website will assist in creating a healthier and overall better life experience. As you can see, these tips and tricks have made me not only extremely handsome. but also very healthy physically and mentally. If you wish to have similar results, you may follow the tips laid out for you in this website.</p>
@@ -58,5 +68,72 @@
 <footer>
    <p><small>&copy; 2025 G Nikua-Hokage - Website by Web Makers Inc.</small></p>
 </footer>
+<button id="openModalBtn" class="button">Open Form</button>
+<!-- Popup container -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <h2>OHIOOOOO!!</h2>
+    <p>Thanks for visiting this gangsta website. Enjoy gathering information that will help you stay healthy.</p>
+  </div>
+</div>
+<script>
+  // Show the popup when the page loads
+  window.onload = function () {
+    // Check if popup has already been shown
+    if (!sessionStorage.getItem('popupShown')) {
+      document.getElementById("popup").style.display = "flex";
+      sessionStorage.setItem('popupShown', 'true'); // Mark as shown
+    }
+  };
+
+  // Close popup when clicking X
+  document.querySelector(".close-btn").onclick = function () {
+    document.getElementById("popup").style.display = "none";
+  };
+
+  // Optional: Close when clicking outside popup
+  window.onclick = function (event) {
+    const popup = document.getElementById("popup");
+    if (event.target === popup) {
+      popup.style.display = "none";
+    }
+  };
+</script>
+<!-- Modal Form -->
+<div id="modalForm" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+      
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+</div>
+<script>
+  const modal = document.getElementById("modalForm");
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.querySelector(".close-modal");
+
+  openModalBtn.onclick = function() {
+    modal.style.display = "flex";
+  };
+
+  closeModalBtn.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
 </body>
 </html>
